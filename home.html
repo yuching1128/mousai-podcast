@@ -18,18 +18,36 @@ body {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
-    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <a href="#introduction" class="w3-bar-item w3-button w3-padding-large">Introduction</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button" title="Requirements Summary">Requirements Summary <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
+        <a href="#RequirementsSummary" class="w3-bar-item w3-button">Use Cases</a>
+        <a href="#stakeholderanalysis" class="w3-bar-item w3-button">Stakeholder Analysis</a>
+        <a href="#" class="w3-bar-item w3-button">Requirements</a>
       </div>
     </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">High-Level Design <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">System Architecture</a>
+        <a href="#" class="w3-bar-item w3-button">File Storage Design</a>
+        <a href="#" class="w3-bar-item w3-button">Database Design</a>
+        <a href="#" class="w3-bar-item w3-button">API Design</a>
+        <a href="#" class="w3-bar-item w3-button">Web Application Design</a>
+        <a href="#" class="w3-bar-item w3-button">Requirement Traceability Matrix</a>
+      </div>
+    </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Design Rationale <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">System Architecture Rationale</a>
+        <a href="#" class="w3-bar-item w3-button">Data Tier Rationale</a>
+        <a href="#" class="w3-bar-item w3-button">API Design Rationale</a>
+          <a href="#" class="w3-bar-item w3-button">Web Application Design Rationale</a>
+      </div>
+    </div>
+    <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Final Thoughts</a>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
@@ -38,126 +56,95 @@ body {font-family: "Lato", sans-serif}
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
   <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
   <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Final Thoughts</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
 </div>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/la.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
-    </div>
+  <!-- The Introduction Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+    <h2 class="w3-wide">Background</h2>
+    <p class="w3-opacity"><i>We love podcasts!</i></p>
+    <p class="w3-justify">Our product, MOUSAI is a podcast hosting provider with live and recorded streaming and different channels. Listeners can search for the podcast topics of their choice, listen and request to connect to a live podcast to chat and share their thoughts if the host accepts. It is a platform where everyone can podcast on their own channel and subscribe to others. So, we are always looking for an all-in-one platform to make user communication more accessible and engaging. But few popular podcasts could have all the features we need at the same time.
+    </p>
   </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
+    
+    <!-- The Requirements Summary Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="RequirementsSummary">
+    <h2 class="w3-wide">Requirement Summary</h2>
+    <h3>Use Cases</h3>
+    <h4>Podcasters</h4>
+    <p class="w3-justify">Mike is an influencer from Twitch and Tiktok. Right now he wants to find a place to create his own podcast to amplify his voice. That’s why he chose MOUSAI. Mike turned to live streaming to promote his podcasts and tried to attract listeners. People love listening to live content, so now he hosts the podcast live. For Mike, it’s been a great way to open up his reach. Live streaming represents the democratization of news casting. Mike is impressed with the functions of interacting with his followers. He can get active and updated responses from comments and direct messages so as to make some adjustments. Today, there are millions of live streaming channels you can tune into; We’re no longer limited by traditional channels found on television. If you have a powerful message to deliver, there’s an audience out there for you, and it’s easier than ever before to reach them.
+    </p>
+      
+     
+    <h4>Subscribers/Listeners</h4>
+    <p class="w3-justify">Albert is a busy software engineer who typically spends nearly 2 hours on his commute each weekday. On his way to work, he likes to use the bits and pieces of his commute to learn and explore topics he is passionate about. Also, he loves the interactivity with people having the same interests as him since he is so busy with work that he has little chance to chat with others. Albert thinks that a live podcast with chatting function will be a  good platform that suits his requirements so he usually listens to podcasts on the subway. Albert follows live channels about constellations, talking about the fortune and analyzing the personality traits of different constellations signs. Albert often shares his personal ideas in the chatting room with the podcaster and other listeners. It makes his commute less boring and also brings entertainment and relaxation to his busy day. Albert loves the platform, which gives him the opportunity to chat in real-time with like-minded people.
+    </p>
+      
+    <h4>Administrator</h4>
+    <p class="w3-justify">TODO
+    </p>
+      
   </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+    
+     <!-- The Stakeholder analysis Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="stakeholderanalysis">
+    <h3 class="w3-wide">Stakeholder analysis</h3>
+        Table  TODO
     </div>
-  </div>
-
-  <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">THE BAND</h2>
-    <p class="w3-opacity"><i>We love music</i></p>
-    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-      </div>
+    
+     <!-- The Requirements analysis Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="requirements">
+    <h3 class="w3-wide">Requirements</h3>
+        <p>
+            As we consider multiple use cases of this system it is apparent the scope of the system can easily expand if allowed.
+        </p>
+        <h4>Functional Requirements(FR)</h4>
+        <ul>
+            <li>FR1 - All users may login to the system using a unique username and password.</li>
+            <li>FR2 - All users may register or sign up themselves into the system</li>
+            <li>FR3 - Audio Hosting - Able to create and host their own channels with unique names.</li>
+            <li>FR4 - Publishing - Able to publish their own podcast Recorded episodes</li>
+            <li>FR5 - CRUD Podcast - Add, search and delete subscriptions and podcasts</li>
+            <li>FR6 - Live Streaming - Channel users can do their Podcast live.</li>
+            <li>FR7 - Listener Engagement - Listeners can send or delete comments, instant messages, and call into record podcasts or live shows</li>
+            <li>FR8 - Live chatting room - Users can build a chatting room under a specific topic subject to live chat with other users</li>
+            <li>FR9 - Subscribe/Unsubscribe to channels - Users are allowed to Follow/subscribe the channel or topic they like.</li>
+            <li>FR10 - Get notifications of the activities of channels being followed or by the system admin.</li>
+            <li>FR11 - Want to use the application on a computer with a microphone when recording or going live in the podcast.</li>
+            <li>FR12 - Create a shareable link to the existing podcast for listeners and schedule a time for a future live podcast.</li>
+            <li>FR13 - All the podcasts should be visible on the wall of the channel</li>
+            <li>FR14 - Has editing features to crop or modulate voice and add some audio enhancements in the podcast.</li>
+            <li>FR15 - Can see the statistics of subscribers and channel exposure.</li>
+            <li>FR16 - One admin web page with notifications, reports, searching and other multiple functions</li>
+            <li>FR17 - Ability to edit and delete the items of the channel or the channel itself universally with admin access</li>
+            <li>FR18 - Notification when there is a new issue reported and updates of the issues (edit, delete, change priority, comments etc).</li>
+            <li>FR19 - Searching function for podcasts, users, chat rooms, and channels by any user.</li>
+            <li>FR20 - All the subscribed channels and liked podcasts should be visible on the user’s wall.</li>
+        </ul>
+        
+        <h4>Non-Functional Requirements(NFR)</h4>
+        <ul>
+            <li>NFR1- Platforms: Accessible as Mobile app(ios android), web app, Smartcar app for Tesla & KIA and has Alexa/ Google Home app integration for listeners.</li>
+            <li>Application interface only in English language.</li>
+            <li>The application should be available 99.9999%.</li>
+            <li>All web pages should have low latency with loading time under 2 seconds</li>
+            <li>All web traffic should be encrypted using Transport Layer Security</li>
+            <li>Appropriate measures should be taken to ensure data servers are secured.</li>
+            <li>Data backups should be created daily (minimum)</li>
+            <li>A private API should be available for third-party, desktop, or mobile application integration.</li>
+            <li>Access to all data should take a privileged approach.</li>
+            <li>The application interface should meet or exceed level AA conformance of the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>.</li>
+        </ul>
     </div>
-  </div>
 
-  <!-- The Tour Section -->
-  <div class="w3-black" id="tour">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">TOUR DATES</h2>
-      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
-
-      <ul class="w3-ul w3-border w3-white w3-text-grey">
-        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
-      </ul>
-
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>New York</b></p>
-            <p class="w3-opacity">Fri 27 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>Paris</b></p>
-            <p class="w3-opacity">Sat 28 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>San Francisco</b></p>
-            <p class="w3-opacity">Sun 29 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ticket Modal -->
-  <div id="ticketModal" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal w3-center w3-padding-32"> 
-        <span onclick="document.getElementById('ticketModal').style.display='none'" 
-       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
-        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-      </header>
-      <div class="w3-container">
-        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="How many?">
-        <p><label><i class="fa fa-user"></i> Send To</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="Enter email">
-        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- The Contact Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
+  
+  <!-- The Final thoughts Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="finalthoughts">
+    <h2 class="w3-wide w3-center">Final Thoughts</h2>
     <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">
@@ -184,9 +171,6 @@ body {font-family: "Lato", sans-serif}
   
 <!-- End Page Content -->
 </div>
-
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
