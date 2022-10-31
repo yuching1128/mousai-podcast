@@ -170,14 +170,40 @@ body {font-family: "Lato", sans-serif}
       </p>
       
       <h3 id="FileStorageDesign">File Storage Design</h3>
-      <p> Podcast streaming platforms may have a variety of data formats, including text, image, and audio types, among others. Extracting and structuring the information contained in these data is not always useful or efficient. This is where the document storage component comes in. The purpose of the document storage component is to securely and persistently store any files that the user uploads to the system.</p>
+      <p> Podcast streaming platforms may have a variety of data formats,
+          including text, image, and audio types, among others.
+          Extracting and structuring the information contained in these data is not always useful or efficient.
+          This is where the document storage component comes in.
+          The purpose of the document storage component is to securely
+          and persistently store any files that the user uploads to the system.</p>
 
-      <p>Amazon S3 is an ideal choice for file storage components. Amazon S3 offers industry-leading scalability, data availability, security, and performance. It is also affordable, well supported, mature and easy to configure. Every file uploaded to the system can be dumped to an S3 bucket and associated with an entity in the database component. We can also use S3 to store backups of all data. Data backups can be automated using tools provided by AWS and stored privately in a separate S3 bucket.</p>
+      <p>Amazon S3 is an ideal choice for file storage components.
+          Amazon S3 offers industry-leading scalability, data availability, security, and performance.
+          It is also affordable, well-supported, mature and easy to configure.
+          Every file uploaded to the system can be dumped to an S3 bucket and associated with an entity in the database component.
+          We can also use S3 to store backups of all data.
+          Data backups can be automated using tools provided by AWS and stored privately in a separate S3 bucket.</p>
       
       <h3 id="DatabaseDesign">Database Design</h3>
-      <p>Databases are a core component of many software systems, especially web-based systems. There are two popular database types: RDBMS and Nosql, each with their own advantages and challenges. RDBMS is ideal for structured data while NoSQL databases can easily handle any data format, such as structured, semi-structured, and unstructured data in a single data store. Using NoSQL, we can easily identify all the metadata the system needs to capture.</p>
+      <p>Databases are a core component of many software systems, especially web-based systems.
+          There are two popular database types: RDBMS and Nosql, each with their own advantages and challenges.
+          RDBMS is ideal for structured data while NoSQL databases can easily handle any data format,
+          such as structured, semi-structured, and unstructured data in a single data store.
+          Using NoSQL, we can easily identify all the metadata the system needs to capture.</p>
 
-      <p>Since MOUSAI is a streaming platform that needs to support large amounts of audio storage space. To maintain this complex and large-scale system, it is better using NoSQL to handle our metadata database. NoSQL models provide several features that we will make heavy use of.</p>
+      <p>Since MOUSAI is a streaming platform that needs to support large amounts of audio storage space.
+          To maintain this complex and large-scale system, it is better using NoSQL to handle our metadata database.
+          NoSQL models provide several features that we will make heavy use of. There are no relational constraints on the data, and it does not need to be even tabular.
+          NoSQL offers performance at a higher scale by typically giving up strong consistency.
+          But for user-related data including user personal information and role information, RDBMS is a good choice.
+          SQL databases are a better fit for heavy duty or complex transactions because
+          it’s more stable and ensure data integrity.</p>
+
+      <p>Below are the charts for our database design. Functional related data is stored in NoSQL and their related files are stored in S3。</p>
+
+      <p>
+          <img src="images/databaseDesign.png" alt="" width="100%" height="100%">
+      </p>
       
       <h3 id="API Design">API Design</h3>
       <p> TODO</p>
@@ -210,6 +236,30 @@ body {font-family: "Lato", sans-serif}
       <p>Amazon S3 has a very user-friendly web interface which takes out the usual hard work of maintaining security, optimizing storage classes and managing the data transfer in the most suitable way.</p>
       <li><b>Flexibility</b></li>
       <p>S3 is ideal for a wide range of uses like data storage, data backup, software delivery, data archiving, disaster recovery, website hosting, mobile applications, and much more.</p>
+
+      <h4>RDBMS</h4>
+      <p>A Relational Database consists of appropriately arranged tables from which data can be administered and operated in various different ways without having to rearrange the entire set of database tables.
+          SQL queries are applied for both interactive queryings to fetch information and gathering data for reporting and analysis purposes.
+          This helps in making important business decision-making processes convenient.</p>
+      <p>Benefits of RDBMS:</p>
+      <li><b>Accuracy</b></li>
+      <p>In the relational database system, there can be multiple tables related to one another with the use of a primary key and foreign key concepts.
+          This makes the data to be non-repetitive. There is no chance for duplication of data.
+          Hence, the accuracy of data in the relational database is more than any other database system.</p>
+      <li><b>Data Integrity</b></li>
+      <p>Data integrity is a crucial characteristic of the Relational Database system.
+          Sturdy Data entries and legitimacy validations ensure that all the Data in the database confines within suitable arrangements and the data necessary for creating the relationships are present.
+          This relational reliability amongst the tables in the database helps in avoiding the records from being imperfect, isolated or unrelated.
+          Data integrity aids in making sure of the relational database’s other significant characteristics like Ease of use, precision, and stability of the data.
+      </p>
+      <li><b>Normalization</b></li>
+      <p>The methodical style is maintained for making sure of a relational database structure is liberated of any variances that can make a difference in the integrity and accuracy of the tables in the database.
+          A normalization process provides a set of regulations, characteristics, and purposes for the database structure and evaluation of a relational database model.
+      </p>
+
+
+
+
 
       <h4>NoSQL</h4>
       <p>NoSQL databases were designed for fast, simple queries, vast data, and frequent application changes. In addition, these databases also make programming much simpler for developers.</p>
