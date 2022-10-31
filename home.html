@@ -170,10 +170,14 @@ body {font-family: "Lato", sans-serif}
       </p>
       
       <h3 id="FileStorageDesign">File Storage Design</h3>
-      <p> TODO</p>
+      <p> Podcast streaming platforms may have a variety of data formats, including text, image, and audio types, among others. Extracting and structuring the information contained in these data is not always useful or efficient. This is where the document storage component comes in. The purpose of the document storage component is to securely and persistently store any files that the user uploads to the system.</p>
+
+      <p>Amazon S3 is an ideal choice for file storage components. Amazon S3 offers industry-leading scalability, data availability, security, and performance. It is also affordable, well supported, mature and easy to configure. Every file uploaded to the system can be dumped to an S3 bucket and associated with an entity in the database component. We can also use S3 to store backups of all data. Data backups can be automated using tools provided by AWS and stored privately in a separate S3 bucket.</p>
       
       <h3 id="DatabaseDesign">Database Design</h3>
-      <p> TODO</p>
+      <p>Databases are a core component of many software systems, especially web-based systems. There are two popular database types: RDBMS and Nosql, each with their own advantages and challenges. RDBMS is ideal for structured data while NoSQL databases can easily handle any data format, such as structured, semi-structured, and unstructured data in a single data store. Using NoSQL, we can easily identify all the metadata the system needs to capture.</p>
+
+      <p>Since MOUSAI is a streaming platform that needs to support large amounts of audio storage space. To maintain this complex and large-scale system, it is better using NoSQL to handle our metadata database. NoSQL models provide several features that we will make heavy use of.</p>
       
       <h3 id="API Design">API Design</h3>
       <p> TODO</p>
@@ -195,8 +199,29 @@ body {font-family: "Lato", sans-serif}
       <p> TODO</p>
       
       <h3 id="DataTierRationale">Data Tier Rationale</h3>
-      <p> TODO</p>
-      
+      <h4>Amazon S3</h4>
+      <p>Using S3 as our file storage gives us everything we want with minimal investment. S3 provides all the tools necessary to properly configure file storage.</p>
+      <p>Benefits of S3:</p>
+      <li><b>Reliable Security</b></li>
+      <p>Amazon S3 buckets can only be used by the identity that created them. We can set access permissions per file, per bucket, or through IAM (Identity Access Management), which provides complete control over how, where and who can frequently access data. Using these rules and permission sets, we can ensure that there is no unauthorized access to our data.</p>
+      <li><b>Availability</b></li>
+      <p>Amazon S3 gives every user, its service access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of websites. </p>
+      <li><b>Simplicity of Management</b></li>
+      <p>Amazon S3 has a very user-friendly web interface which takes out the usual hard work of maintaining security, optimizing storage classes and managing the data transfer in the most suitable way.</p>
+      <li><b>Flexibility</b></li>
+      <p>S3 is ideal for a wide range of uses like data storage, data backup, software delivery, data archiving, disaster recovery, website hosting, mobile applications, and much more.</p>
+
+      <h4>NoSQL</h4>
+      <p>NoSQL databases were designed for fast, simple queries, vast data, and frequent application changes. In addition, these databases also make programming much simpler for developers.</p>
+      <p>Benefits of NoSQL:</p>
+      <li><b>Flexibility</b></li>
+      <p>NoSQL databases offer flexible schemas and also support a variety of data formats that are ideal for building MOUSAI that require large data volumes and low latency or response times.</p>
+      <li><b>Scalability</b></li>
+      <p>NoSQL databases scale out horizontally, which means that they can handle extremely large amounts of data—even as the data is growing —in a more efficient way. With MOUSAI’s continue growing users and number of audios, it is reasonable using NoSQL. The scale-out architecture of a NoSQL database can be particularly valuable when data volume or traffic increases.</p>
+      <li><b>Availability</b></li>
+      <p>NoSQL databases automatically replicate data across multiple servers, data centers, or cloud resources. In turn, this minimizes latency for users, no matter where they’re located.</p>
+
+
       <h3 id="APIDesignRationale">API Design Rationale</h3>
       <p> TODO</p>
       
