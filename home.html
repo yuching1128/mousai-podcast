@@ -311,8 +311,8 @@ body {font-family: "Lato", sans-serif}
     <p>In the <a href="#APIDesign">Figure 4.1</a> we can see some more detailed view of the <a href="#fig1.1">high level design</a>. Here, we can see:
       <ul>
         <li><b>Identity Provider</b>: This service will be helpful in all the the functional requirements as this is a closed system and need authentication and authorisation to access the resources. Also, NFR1, NFR3 and NFR9 are covered with this serivice in the architecture.</li>
-        <li><b>API Gateway</b></li>
-        <li><b>AWS Cloud Front (Content Delivery Network)</b></li>
+        <li><b>API Gateway</b>: All the API calls will go to the microservices through the API gateway.</li>
+        <li><b>Content Delivery Network</b>: We will use a cloud manged CDN service like AWS Cloud Front for the faster content delivery to the enduser reducing the latency and improving the performance of the system.</li>
         <li><b>Microservices</b></li>
         <li><b>AWS S3 File Storage</b></li>
         <li><b>AWS Dynamo Databases (NoSql)</b></li>
