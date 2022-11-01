@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
@@ -83,17 +83,89 @@ body {font-family: "Lato", sans-serif}
     <h4>Subscribers/Listeners</h4>
     <p class="w3-justify">Albert is a busy software engineer who typically spends nearly 2 hours on his commute each weekday. On his way to work, he likes to use the bits and pieces of his commute to learn and explore topics he is passionate about. Also, he loves the interactivity with people having the same interests as him since he is so busy with work that he has little chance to chat with others. Albert thinks that a live podcast with chatting function will be a  good platform that suits his requirements so he usually listens to podcasts on the subway. Albert follows live channels about constellations, talking about the fortune and analyzing the personality traits of different constellations signs. Albert often shares his personal ideas in the chatting room with the podcaster and other listeners. It makes his commute less boring and also brings entertainment and relaxation to his busy day. Albert loves the platform, which gives him the opportunity to chat in real-time with like-minded people.
     </p>
-      
-    <h4>Administrator</h4>
-    <p class="w3-justify">TODO
-    </p>
+
       
   </div>
     
      <!-- The Stakeholder analysis Section -->
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="stakeholderanalysis">
     <h3 class="w3-wide">Stakeholder analysis</h3>
-        Table  TODO
+        <table class="w3-table w3-bordered">
+            <tr>
+                <th>Types of users</th>
+                <th>Types of platform</th>
+                <th>User character</th>
+            </tr>
+            <tr>
+                <td>Podcasters</td>
+                <td>Web</td>
+                <td>
+                    Background:</br>
+                    <ul>
+                        <li>
+                            Familiar with computer and smartphone, </br>
+                            comfortable with using web or mobile based application.</br>
+                        </li>
+                    </ul>
+                    Expectations:</br>
+                    <ul>
+                        <li>Want to use the application on a computer with a
+                            microphone when recording or going live in the podcast.</li>
+                        <li>Create multiple channels with unique name</li>
+                        <li>Create a shareable link of the existing podcast for listeners</li>
+                        <li>Collaborate with multiple publishers and create a podcast</li>
+                        <li>All the podcasts should be visible on the wall of the channel</li>
+                        <li>Publishers can restrict access or delete the podcast</li>
+                        <li>Publishers can edit the content of the podcast</li>
+                        <li>Create an event/schedule a live podcast time and create a sharable link</li>
+                        <li>Reply to comments on the podcast and report the comments for removal in case of
+                            any abusive language used</li>
+                        <li>Has editing features to crop or modulate voice and add some audio enhancements in the podcast</li>
+                        <li>Can see the number of subscribers, likes and views on the channel</li>
+                        <li>Want to be able to see the analytics of the content response by the subscribers</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Listeners / Subscribers</td>
+                <td>Web / Mobile / Smart Devices</td>
+                <td>
+                    Background:</br>
+                    <ul>
+                       <li>Familiar with computer and smartphone,
+                           comfortable with using web or mobile based application</li>
+                    </ul>
+                    Expectations:</br>
+                    <ul>
+                        <li>Listen to live Streaming/Recorded Podcasts</li>
+                        <li>Post/Delete comments, instant messages, and call into record podcasts or live shows</li>
+                        <li>Build/Cancel a chatting room under a specific topic subject to live chat with other users</li>
+                        <li>Subscribe/unsubscribe to the channels</li>
+                        <li>Want to be notified of the channel activities that are followed and admin activities</li>
+                        <li>All the  subscribed channels and liked podcasts should be visible on the user’s wall</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Administrator</td>
+                <td>Web</td>
+                <td>
+                    Background:</br>
+                    <ul>
+                        <li>Understands the application full fledgedly</li>
+                        <li>Ability to judge the reported issues and continue the reporting process accordingly</li>
+                        <li>Ability to understand the language (English) used in the application</li>
+                    </ul>
+                    Expectations:</br>
+                    <ul>
+                        <li>Has access to the admin role and admin web page</li>
+                        <li>Has access to edit and delete the items of the channel or the channel itself universally</li>
+                        <li>Has access to disregard the issues mentioning the right reasons</li>
+                        <li>Notification when there is a new issue reported and updates of the issues (edit, delete, change priority, comments etc)</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
     </div>
     
      <!-- The Requirements analysis Section -->
@@ -215,7 +287,453 @@ body {font-family: "Lato", sans-serif}
       <p> TODO</p>
       
       <h3 id="RequirementTraceabilityMatrix">Requirement Traceability Matrix</h3>
-      <p> TODO</p>
+      <h4>Functional Requirements(FR):</h4>
+      <table class="w3-table w3-bordered">
+          <tr>
+              <td>Requirement number</td>
+              <td>Microservices Architecture</td>
+              <td>Database Component</td>
+              <td>File Storage (S3)</td>
+              <td>Web App Component</td>
+              <td>Rest API</td>
+              <td>WebSocket API</td>
+              <td>Message Broker</td>
+              <td>Identity Provider</td>
+              <td>CDN</td>
+              <td>Pubsub Service (Amazon SNS)</td>
+              <td>Analytics Service</td>
+          </tr>
+          <tr>
+              <td>FR1</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR2</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR3</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR4</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR5</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR6</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR7</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR8</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR9</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR10</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR11</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR12</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR13</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR14</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR15</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+          </tr>
+          <tr>
+              <td>FR16</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR17</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR18</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR19</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>FR20</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+          </tr>
+      </table>
+      </br>
+      <h4>Non-Functional Requirements(NFR)</h4>
+      <table class="w3-table w3-bordered">
+          <tr>
+              <td>Requirement number</td>
+              <td>Microservices Architecture</td>
+              <td>Database Component</td>
+              <td>File Storage (S3)</td>
+              <td>Web App Component</td>
+              <td>Rest API</td>
+              <td>WebSocket API</td>
+              <td>Message Broker</td>
+              <td>Identity Provider</td>
+              <td>CDN</td>
+              <td>Pubsub Service (Amazon SNS)</td>
+              <td>Analytics Service</td>
+          </tr>
+          <tr>
+              <td>NFR1</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR3</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR4</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR6</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR7</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR8</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR9</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>NFR10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+          </tr>
+      </table>
+
     </div>
     
       <!-- The Design Rationale Section -->
