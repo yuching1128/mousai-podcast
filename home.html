@@ -218,6 +218,20 @@ body {font-family: "Lato", sans-serif}
     <h2 class="w3-wide w3-center">High Level Design</h2>
       <h3 id="SystemArchitecture">System Architecture</h3>
       <p>
+          Based on the requirements of the system, we have applied microservices architecture with multiple modules.
+          The presentation tier is mainly for the user interface and communication layer of the application,
+          where the end user interacts with the application.
+          Firstly, the presentation tier is for the user interface and communication layer of the application,
+          where the end user interacts with the application.
+          In MOUSAI, our users could get access to the data on 3 different platforms including web, mobile and other smart devices.
+          The application tier is for core data logic, which is the heart of the whole system.
+          In this tier, we are using web socket APIs as well as the REST APIs.
+          Web server and Application server of this tier are kinds of the server which is employed to deliver sites and
+          therefore the latter deals with application operations performed between users and back-end business applications of the organization.
+          The last tier is where the information processed by the application is stored and managed.
+          We will apply databases here to store the metadata, user information and audio files.
+      </p>
+      <p>
           <img src="images/HLD.png" alt="High level diagram" width="100%" height="100%">
       </p>
       <h4>Domain Design</h4>
