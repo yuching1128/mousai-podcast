@@ -217,18 +217,13 @@ body {font-family: "Lato", sans-serif}
     <h2 class="w3-wide w3-center">High Level Design</h2>
       <h3 id="SystemArchitecture">System Architecture</h3>
       <p>
-          Based on the requirements of the system, we have applied microservices architecture with multiple modules.
-          The presentation tier is mainly for the user interface and communication layer of the application,
-          where the end user interacts with the application.
-          Firstly, the presentation tier is for the user interface and communication layer of the application,
-          where the end user interacts with the application.
-          In MOUSAI, our users could get access to the data on 3 different platforms including web, mobile and other smart devices.
-          The application tier is for core data logic, which is the heart of the whole system.
-          In this tier, we are using web socket APIs as well as the REST APIs.
-          Web server and Application server of this tier are kinds of the server which is employed to deliver sites and
-          therefore the latter deals with application operations performed between users and back-end business applications of the organization.
-          The last tier is where the information processed by the application is stored and managed.
-          We will apply databases here to store the metadata, user information and audio files.
+          Since this product has a scope to scale up and down both horizontally as well as vertically based on the number of listeners and podcasters, as well as, the number of features that can be added in the future, we feel microservices architecture will best suit the APIs being consumed by user interface consisting of multiple devices. The presentation tier is mainly for the user interface and communication layer of the application, where the end-user interacts with the application. In MOUSAI, our users could get access to the data on three different platforms including web, mobile, and smart device integration such as Alexa apps and smart car apps. Figure 1.1 is the high-level architecture depicting that the users will be able to access the application through three interfaces:
+          <ul>
+            <li>Listener: Web, Mobile, Smart devices</li>
+            <li>Podcaster: Web </li>
+            <li>Admin: Web</li>
+            <br>
+          All the requests will go to the web server and the static content will be stored there and the dynamic content will be served by the API gateway. We are using web socket APIs as well as REST APIs. Web server and Application server of this tier are kinds of server which are employed to deliver sites and therefore the latter deals with application operations performed between users and back-end business applications of the organization. The audio files and all the data to be stored will be stored in heterogeneous data sources. The audio files and the chat messages will be stored in Cloud managed services such as Amazon S3. The user information will be stored in the RDBMS and the audio metadata will be stored in a NOSQL database.
       </p>
       <p>
           <img src="images/HLD.png" alt="High level diagram" width="100%" height="100%">
