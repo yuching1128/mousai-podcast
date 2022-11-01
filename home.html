@@ -762,7 +762,66 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="designRationale">
     <h2 class="w3-wide w3-center">Design Rationale</h2>
       <h3>System Architecture Rationale</h3>
-      <p> TODO</p>
+      <p>In this application, we have several modules to serve each requirement. They are:</p>
+      <ul>
+        <li>Identity Provider</li>
+        <li>API Gateway</li>
+        <li>AWS Cloud Front (Content Delivery Network)</li>
+        <li>Microservices</li>
+        <li>AWS S3 File Storage</li>
+        <li>AWS Dynamo Databases (NoSql)</li>
+        <li>Message Broker</li>
+      </ul>
+      <h4>Identity Provider:</h4>
+      <p>An identity provider is a system that creates, stores, and manages digital identities. It can either directly
+        authenticate the user or can provide authentication services to third-party service providers (apps, websites,
+        or other digital services). In our application, we are expecting people to have at least a google email id to
+        log in and use google’s Single Sign-On service to provide authentication to use the application. This allows
+        users to create a profile in MOUSAI.
+      </p>
+      <h4>API Gateway:</h4>
+      <p>An API management tool sits between client and backend services. An API gateway acts as a reverse proxy to
+        accept all API calls, aggregate the services required to fulfill them and return the appropriate result. They
+        are used to protect the application from overuse and abuse by providing an extra layer of authentication and
+        rate-limiting services. They also provide us with statistics on how the APIs are used that help us with the
+        future monetization of particular services.
+      </p>
+
+      <h4>AWS Cloud Front:</h4>
+      <p>AWS Cloud Front works as the content delivery network(CDN) in our application because we are a large number of
+        users across the world and have less latency for the response. CDN refers to a geographically distributed group
+        of servers that work together to provide fast delivery of data. It allows for the quick transfer of assets
+        needed for loading application content including HTML pages, javascript files, stylesheets, images, and videos.
+        It can also help our application protect from common attacks such as DDOS attacks.
+      </p>
+
+      <h4>Microservices:</h4>
+      <p>Microservices architecture is very helpful when a few of the services are more critical than other services.
+        When a change is made in one service, we can deploy only one service while keeping alive the rest of the
+        services. This helps us save the downtime of critical services. Scalability is also easy with this architecture
+        being incorporated into the application. That is why we have different services for different requirements like
+        those mentioned below:
+      <ul>
+        <li>Users Services - to make CRUD on the profile data of each user.</li>
+        <li>Podcast Upload/ modify Service - upload, edit, and delete a podcast by a podcaster.</li>
+        <li>Live Stream Service - to live stream a podcast by a podcaster.</li>
+        <li>Listener Podcast Service - to stream, like, and comment on a podcast by a listener.</li>
+        <li>Notification/ Pub-sub Service(Event based) - to send notifications to the users for every event that
+          happened involving them or their content like a new reply to their message, like and comment on their podcast,
+          new podcast by the channel or user they follow, updates on the issues they reported, etc</li>
+        <li>Chatting Service - to chat, reply, delete, and create chat rooms by the users.</li>
+        <li>Analytics Service - to view the analytics of the content of the podcaster</li>
+
+      </ul>
+      </p>
+
+      <h4>Message Broker:</h4>
+      <p>A message broker is a software that enables services to communicate with each other and exchange information.
+        This allows interdependent services to “talk” with one another directly, even if they were written in different
+        languages or implemented on different platforms. They are used in our application to delegate a few tasks to
+        other services as sending a notification to a user when the admin makes changes to their issue report, sending
+        notification to the user regarding the user interactions in their podcast.
+      </p>
       
       <h3 style="padding-top: 64px" id="DataTierRationale">Data Tier Rationale</h3>
       <h4>Amazon S3</h4>
@@ -813,7 +872,13 @@ body {font-family: "Lato", sans-serif}
 
 
       <h3 style="padding-top: 64px" id="APIDesignRationale">API Design Rationale</h3>
-      <p> TODO</p>
+      <h3 id="APIDesignRationale">API Design Rationale</h3>
+      <p>We use two different APIs for this product. APIs are necessary to decouple the clients and backend servers in the application. They are also needed to bring applications together in order to perform a designed function built around sharing data and executing pre-defined processes. They work as the middleman, allowing developers to build new programmatic interactions between the various applications people and businesses use on a daily basis.</p>
+      <h4>Rest API:</h4>
+      <p>Rest APIs are useful when the clients need to communicate with the backend servers for the data. These are stateless, meaning every connection to the server is a new one. They are helpful when you need only a single machine to trigger the request. In our application, we can use these APIs for all client requests except the streaming services.</p>
+      <h4>WebSocket API:</h4>
+      <p>These APIs are written over TCP connections. For streaming, we will need a connection that is reliable and sequential as we need to send the packets or bits of the data or audio (in our case) sequentially. We can use Ajax long polling for the streaming services. But they are not efficient in our case as we are expecting at least 1000 users per second requesting to listen to audio.</p>
+      <h3 id="WebApplicationDesignRationale">Web Application Design Rationale</h3>
       
       <h3 style="padding-top: 64px" id="WebApplicationDesignRationale">Web Application Design Rationale</h3>
       <p> TODO</p>
