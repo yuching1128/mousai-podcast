@@ -404,10 +404,10 @@
           <li><b>Content Delivery Network</b>: We will use a cloud manged CDN service like AWS Cloud Front for the
             faster content delivery to the end user reducing the latency and improving the performance of the system.
           </li>
-          <li><b>Microservices</b></li>
-          <li><b>AWS S3 File Storage</b></li>
-          <li><b>AWS Dynamo Databases (NoSql)</b></li>
-          <li><b>Message Broker</b></li>
+          <li><b>Microservices</b>: All the services will be created following a microservices architecture.</li>
+          <li><b>File Storage</b> We will use the cloud managed services such as AWS S3 for storing the audio files and the chats.</li>
+          <li><b>NoSql</b>:Since we are using microservices, we can have hetrogeneous databases, so for the audio metadata and comments on the podcasts will use a NoSQL DB such as AWS Dynamo Database.</li>
+          <li><b>Message Broker</b>: Since this is a microservice environment, we will use a message broker for the interaction between the services.</li>
         </ul>
         </p>
 
@@ -1057,20 +1057,21 @@
         Ajax long polling for the streaming services. But they are not efficient in our case as we are expecting at
         least 1000 users per second requesting to listen to audio.</p>
 
-      <h3 style="padding-top: 64px" id="WebApplicationDesignRationale">Web and Mobile Application Design Rationale</h3>
-      <p> For this application, we are a single page application because it can be used both on any screen. We want our
-        application to be screen-atheist. React.js applications are especially both single page applications and
+      
+
+      <h3 style="padding-top: 64px" id="WebApplicationDesignRationale">User Interface Design Rationale</h3>
+      <p> For this application, we have suggested a single page application because it can be used for on any screen and will have low latency due to async calls and dynamic components. We want our
+        application to be screen-atheist. We can use framework such as React.js which can help create applications which are both single page applications and
         screen-atheist. It means they work better on any screen the application is opened on.</p>
       <p>
         The MVC architecture helps the application to decouple the data manipulation activities and user interactions.
-        It is easy to code, maintain and test as they support test driven development. They can also be easily modified.
+        It is easy to code, maintain and test as they support test driven development and separation of concern makes it easier to incorporate changes and enhancements.
         This architecture helps us separate data and business logic that is easy to maintain and organize. We want to
-        keep our frontend as light as possible because we have time consuming processes happening in the backend.
+        keep the frontend as light as possible because we have time consuming processes happening in the backend such as uploading of the podcasts.
       </p>
-      <p>The APIs are built in way that they support all the devices equally. The smart devices, mobile application and
-        web application frontend might vary but our APIs are same for all the devices. This allows the application
+      <p>The APIs will return JSON response so can be consumed by any frontend application. The smart devices, mobile application and
+        web application frontend might vary but the microservices and APIs  will remain same for all the devices. This allows the application
         support all the devices and easy maintainability.</p>
-
     </div>
 
     <!-- The Final thoughts Section -->
