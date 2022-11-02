@@ -1,807 +1,905 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
-<title>MOUSAI Podcast</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
+  <title>MOUSAI Podcast</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+      display: none
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#introduction" class="w3-bar-item w3-button w3-padding-large">Introduction</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="Requirements Summary">Requirements Summary <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#RequirementsSummary" class="w3-bar-item w3-button">Use Cases</a>
-        <a href="#stakeholderanalysis" class="w3-bar-item w3-button">Stakeholder Analysis</a>
-        <a href="#requirements" class="w3-bar-item w3-button">Requirements</a>
-      </div>
-    </div>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
+        onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#introduction" class="w3-bar-item w3-button w3-padding-large">Introduction</a>
       <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">High-Level Design <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#hightleveldesign" class="w3-bar-item w3-button">System Architecture</a>
-        <a href="#FileStorageDesign" class="w3-bar-item w3-button">File Storage Design</a>
-        <a href="#DatabaseDesign" class="w3-bar-item w3-button">Database Design</a>
-        <a href="#APIDesign" class="w3-bar-item w3-button">API Design</a>
-        <a href="#WebApplicationDesign" class="w3-bar-item w3-button">User Interface Design</a>
-        <a href="#RequirementTraceabilityMatrix" class="w3-bar-item w3-button">Requirement Traceability Matrix</a>
+        <button class="w3-padding-large w3-button" title="Requirements Summary">Requirements Summary <i
+            class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#RequirementsSummary" class="w3-bar-item w3-button">Use Cases</a>
+          <a href="#stakeholderanalysis" class="w3-bar-item w3-button">Stakeholder Analysis</a>
+          <a href="#requirements" class="w3-bar-item w3-button">Requirements</a>
+        </div>
       </div>
-    </div>
       <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">Design Rationale <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#designRationale" class="w3-bar-item w3-button">System Architecture Rationale</a>
-        <a href="#DataTierRationale" class="w3-bar-item w3-button">Data Tier Rationale</a>
-        <a href="#APIDesignRationale" class="w3-bar-item w3-button">API Design Rationale</a>
+        <button class="w3-padding-large w3-button" title="More">High-Level Design <i
+            class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#hightleveldesign" class="w3-bar-item w3-button">System Architecture</a>
+          <a href="#FileStorageDesign" class="w3-bar-item w3-button">File Storage Design</a>
+          <a href="#DatabaseDesign" class="w3-bar-item w3-button">Database Design</a>
+          <a href="#APIDesign" class="w3-bar-item w3-button">API Design</a>
+          <a href="#WebApplicationDesign" class="w3-bar-item w3-button">User Interface Design</a>
+          <a href="#RequirementTraceabilityMatrix" class="w3-bar-item w3-button">Requirement Traceability Matrix</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Design Rationale <i
+            class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#designRationale" class="w3-bar-item w3-button">System Architecture Rationale</a>
+          <a href="#DataTierRationale" class="w3-bar-item w3-button">Data Tier Rationale</a>
+          <a href="#APIDesignRationale" class="w3-bar-item w3-button">API Design Rationale</a>
           <a href="#WebApplicationDesignRationale" class="w3-bar-item w3-button">Web Application Design Rationale</a>
+        </div>
       </div>
+      <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Final Thoughts</a>
     </div>
-    <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Final Thoughts</a>
   </div>
-</div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Final Thoughts</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-
-  <!-- The Introduction Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
-    <h2 class="w3-wide">Background</h2>
-    <p class="w3-opacity"><i>We love podcasts!</i></p>
-    <p class="w3-justify">Our product, MOUSAI is a podcast hosting provider with live and recorded streaming and different channels as well as listeners can search for the podcast topics of their choice, listen and request to connect to a live podcast to chat and share their thoughts if the host accepts. It is a platform where everyone can podcast on their own channel and subscribe to others. So, we are always looking for an all-in-one platform to make user communication more accessible and engaging. This application is focussed on the user engagement around the podcasts.
-    </p>
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+    <a href="#finalthoughts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Final Thoughts</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
   </div>
-    
+
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- The Introduction Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="introduction">
+      <h2 class="w3-wide">Background</h2>
+      <p class="w3-opacity"><i>We love podcasts!</i></p>
+      <p class="w3-justify">Our product, MOUSAI is a podcast hosting provider with live and recorded streaming and
+        different channels as well as listeners can search for the podcast topics of their choice, listen and request to
+        connect to a live podcast to chat and share their thoughts if the host accepts. It is a platform where everyone
+        can podcast on their own channel and subscribe to others. So, we are always looking for an all-in-one platform
+        to make user communication more accessible and engaging. This application is focussed on the user engagement
+        around the podcasts.
+      </p>
+    </div>
+
     <!-- The Requirements Summary Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="RequirementsSummary">
-    <h2 class="w3-wide">Requirement Summary</h2>
-    <h3>Use Cases</h3>
-    <h4>Podcasters</h4>
-    <p class="w3-justify">Mike is an influencer from Twitch and Tiktok. Right now he wants to find a place to create his own podcast to amplify his voice. That’s why he chose MOUSAI. Mike turned to live streaming to promote his podcasts and tried to attract listeners. People love listening to live content, so now he hosts the podcasts live. For Mike, it’s been a great way to open up his reach. Live streaming represents the democratization of news casting. Mike is impressed with the functions of interacting with his followers. He can get active and updated responses from comments and direct messages so as to make some adjustments. Today, there are millions of live streaming channels you can tune into; We’re no longer limited by traditional channels found on television/radio. If you have a powerful message to deliver, there’s an audience out there for you, and it’s easier than ever before to reach them and engage.
-    </p>
-      
-     
-    <h4>Subscribers/Listeners</h4>
-    <p class="w3-justify">Albert is a busy software engineer who typically spends nearly 2 hours on his commute each weekday. On his way to work, he likes to use the bits and pieces of his commute to learn and explore topics he is passionate about. Also, he loves the interacting with people having the same interests as him since he is so busy with work that he has little chance to chat with others. Albert thinks that a live podcast with chatting function will be a  good platform that suits his requirements so he usually listens to podcasts on the subway. Albert follows live channels about constellations, talking about the fortune and analyzing the personality traits of different constellations signs. Albert often shares his personal ideas in the chatting room with the podcaster and other listeners. It makes his commute less boring and also brings entertainment and relaxation to his busy day. Albert loves the platform, which gives him the opportunity to chat and talk on live podcasts in real-time with like-minded people.
-    </p>
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="RequirementsSummary">
+      <h2 class="w3-wide">Requirement Summary</h2>
+      <h3>Use Cases</h3>
+      <h4>Podcasters</h4>
+      <p class="w3-justify">Mike is an influencer from Twitch and Tiktok. Right now he wants to find a place to create
+        his own podcast to amplify his voice. That’s why he chose MOUSAI. Mike turned to live streaming to promote his
+        podcasts and tried to attract listeners. People love listening to live content, so now he hosts the podcasts
+        live. For Mike, it’s been a great way to open up his reach. Live streaming represents the democratization of
+        news casting. Mike is impressed with the functions of interacting with his followers. He can get active and
+        updated responses from comments and direct messages so as to make some adjustments. Today, there are millions of
+        live streaming channels you can tune into; We’re no longer limited by traditional channels found on
+        television/radio. If you have a powerful message to deliver, there’s an audience out there for you, and it’s
+        easier than ever before to reach them and engage.
+      </p>
 
-      
-  </div>
-    
-     <!-- The Stakeholder analysis Section -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="stakeholderanalysis">
-    <h3 class="w3-wide">Stakeholder analysis</h3>
-        <table class="w3-table w3-bordered">
-            <tr>
-                <th>Types of users</th>
-                <th>Types of platform</th>
-                <th>User character</th>
-            </tr>
-            <tr>
-                <td>Podcasters</td>
-                <td>Web</td>
-                <td>
-                    Background:</br>
-                    <ul>
-                        <li>
-                            Familiar with computer and smartphone, </br>
-                            comfortable with using web-based application.</br>
-                        </li>
-                    </ul>
-                    Expectations:</br>
-                    <ul>
-                        <li>Want to use the application on a computer with a
-                            microphone when recording or going live in the podcast.</li>
-                        <li>Create multiple channels based on the topic that interests the podcaster with a unique name.</li>
-                        <li>Able to share a link of the existing podcast for listeners.</li>
-                        <li>Collaborate with multiple publishers and create a podcasts.</li>
-                        <li>All the podcasts should be visible on the wall of the channel wall.</li>
-                        <li>Able to restrict access or delete own podcasts.</li>
-                        <li>Able to edit the content of the podcasts</li>
-                        <li>Able to create an event/schedule a live podcast time and able to share the link.</li>
-                        <li>Able to reply to comments on the podcast and report the comments for removal in case of
-                            any abusive language used.</li>
-                        <li>Able to edit audio having features to crop or modulate voice and add some audio enhancements in the podcast.</li>
-                        <li>Can see the number of subscribers, likes and views on the channel.</li>
-                        <li>Want to be able to see the analytics of the content response by the subscribers.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Listeners / Subscribers</td>
-                <td>Web / Mobile / Smart Devices</td>
-                <td>
-                    Background:</br>
-                    <ul>
-                       <li>Familiar with computer, smartphone or smart devices,
-                           comfortable with using web, mobile or smart devices based application</li>
-                    </ul>
-                    Expectations:</br>
-                    <ul>
-                        <li>Able to listen to live Streaming/Recorded Podcasts</li>
-                        <li>Able to post/delete comments, instant messages, and call into record podcasts or live shows</li>
-                        <li>Able to build/Cancel a chatting room under a specific topic subject to live chat with other users</li>
-                        <li>Able to subscribe/unsubscribe to the channels</li>
-                        <li>Want to be notified of the channel activities that are followed and admin activities</li>
-                        <li>All the  subscribed channels and liked podcasts should be visible on the user’s wall</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Administrator</td>
-                <td>Web</td>
-                <td>
-                    Background:</br>
-                    <ul>
-                        <li>Able to understands the application functions</li>
-                        <li>Ability to judge the reported issues and continue the reporting process accordingly</li>
-                        <li>Ability to understand the language (English) used in the application</li>
-                    </ul>
-                    Expectations:</br>
-                    <ul>
-                        <li>Has access to the admin role and admin web pages</li>
-                        <li>Able to edit and delete, the items of the channel or the channel itself universally</li>
-                        <li>Able to disregard the issues mentioning the right reasons</li>
-                        <li>Get notifications when there is a new issue reported and updates of the issues (edit, delete, change priority, comments etc)</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+
+      <h4>Subscribers/Listeners</h4>
+      <p class="w3-justify">Albert is a busy software engineer who typically spends nearly 2 hours on his commute each
+        weekday. On his way to work, he likes to use the bits and pieces of his commute to learn and explore topics he
+        is passionate about. Also, he loves the interacting with people having the same interests as him since he is so
+        busy with work that he has little chance to chat with others. Albert thinks that a live podcast with chatting
+        function will be a good platform that suits his requirements so he usually listens to podcasts on the subway.
+        Albert follows live channels about constellations, talking about the fortune and analyzing the personality
+        traits of different constellations signs. Albert often shares his personal ideas in the chatting room with the
+        podcaster and other listeners. It makes his commute less boring and also brings entertainment and relaxation to
+        his busy day. Albert loves the platform, which gives him the opportunity to chat and talk on live podcasts in
+        real-time with like-minded people.
+      </p>
+
+
     </div>
-    
-     <!-- The Requirements analysis Section -->
+
+    <!-- The Stakeholder analysis Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="stakeholderanalysis">
+      <h3 class="w3-wide">Stakeholder analysis</h3>
+      <table class="w3-table w3-bordered">
+        <tr>
+          <th>Types of users</th>
+          <th>Types of platform</th>
+          <th>User character</th>
+        </tr>
+        <tr>
+          <td>Podcasters</td>
+          <td>Web</td>
+          <td>
+            Background:</br>
+            <ul>
+              <li>
+                Familiar with computer and smartphone, </br>
+                comfortable with using web-based application.</br>
+              </li>
+            </ul>
+            Expectations:</br>
+            <ul>
+              <li>Want to use the application on a computer with a
+                microphone when recording or going live in the podcast.</li>
+              <li>Create multiple channels based on the topic that interests the podcaster with a unique name.</li>
+              <li>Able to share a link of the existing podcast for listeners.</li>
+              <li>Collaborate with multiple publishers and create a podcasts.</li>
+              <li>All the podcasts should be visible on the wall of the channel wall.</li>
+              <li>Able to restrict access or delete own podcasts.</li>
+              <li>Able to edit the content of the podcasts</li>
+              <li>Able to create an event/schedule a live podcast time and able to share the link.</li>
+              <li>Able to reply to comments on the podcast and report the comments for removal in case of
+                any abusive language used.</li>
+              <li>Able to edit audio having features to crop or modulate voice and add some audio enhancements in the
+                podcast.</li>
+              <li>Can see the number of subscribers, likes and views on the channel.</li>
+              <li>Want to be able to see the analytics of the content response by the subscribers.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Listeners / Subscribers</td>
+          <td>Web / Mobile / Smart Devices</td>
+          <td>
+            Background:</br>
+            <ul>
+              <li>Familiar with computer, smartphone or smart devices,
+                comfortable with using web, mobile or smart devices based application</li>
+            </ul>
+            Expectations:</br>
+            <ul>
+              <li>Able to listen to live Streaming/Recorded Podcasts</li>
+              <li>Able to post/delete comments, instant messages, and call into record podcasts or live shows</li>
+              <li>Able to build/Cancel a chatting room under a specific topic subject to live chat with other users</li>
+              <li>Able to subscribe/unsubscribe to the channels</li>
+              <li>Want to be notified of the channel activities that are followed and admin activities</li>
+              <li>All the subscribed channels and liked podcasts should be visible on the user’s wall</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Administrator</td>
+          <td>Web</td>
+          <td>
+            Background:</br>
+            <ul>
+              <li>Able to understands the application functions</li>
+              <li>Ability to judge the reported issues and continue the reporting process accordingly</li>
+              <li>Ability to understand the language (English) used in the application</li>
+            </ul>
+            Expectations:</br>
+            <ul>
+              <li>Has access to the admin role and admin web pages</li>
+              <li>Able to edit and delete, the items of the channel or the channel itself universally</li>
+              <li>Able to disregard the issues mentioning the right reasons</li>
+              <li>Get notifications when there is a new issue reported and updates of the issues (edit, delete, change
+                priority, comments etc)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- The Requirements analysis Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="requirements">
-    <h3 class="w3-wide">Requirements</h3>
-        <p>
-            As we consider multiple use cases of this system, it is apparent the scope of the system can easily expand if allowed.
-        </p>
-        <h4>Functional Requirements(FR)</h4>
-        <ul>
-            <li>FR1 - All users may login to the system using a unique username and password.</li>
-            <li>FR2 - All users may register or sign up themselves into the system except admin as we will have an admin created in the system from backend.</li>
-            <li>FR3 - Audio Hosting - Podcasters should be able to create and host their own channels with unique names.</li>
-            <li>FR4 - Publishing - Podcasters should be able to publish their own podcast Recorded episodes.</li>
-            <li>FR5 - CRUD Podcast - Podcasters should be able to Add, search and delete subscriptions and podcasts.</li>
-            <li>FR6 - Live Streaming - Podcasters should be able to do their Podcast live.</li>
-            <li>FR7 - Listener Engagement - Listeners can send or delete comments, instant messages, and can request to join into live shows.</li>
-            <li>FR8 - Live chatting room - Users can build a chatting room under a specific topic subject to live chat with other users.</li>
-            <li>FR9 - Subscribe/Unsubscribe to channels - Users are allowed to Follow/subscribe the channel or topic they like.</li>
-            <li>FR10 - Users should be able to get notifications of the activities of channels being followed or by the system admin.</li>
-            <li>FR11 - Podcasters can use the application on a computer with a microphone when recording or going live in the podcast.</li>
-            <li>FR12 - Podcasters should be able to share/copy a link of an existing podcast and schedule a time for a future live podcast.</li>
-            <li>FR13 - All the podcasts created by the podcaster in the particular channel should be visible on the wall of the channel.</li>
-            <li>FR14 - Podcasters should hvae editing features to crop or modulate voice and add some audio enhancements in the podcast.</li>
-            <li>FR15 - Podcasters can see the statistics of their subscribers and channel exposure.</li>
-            <li>FR16 - Admin should have a page where he/she can see the notifications, reports, search and do other multiple functions.</li>
-            <li>FR17 - Admin should be able to edit and delete the items of the channel or the channel itself universally.</li>
-            <li>FR18 - Admin should get a notification when there is a new issue reported and if there are updates of the issues (edit, delete, change priority, comments etc).</li>
-            <li>FR19 - Searching function for podcasts, users, chat rooms, and channels by any user.</li>
-            <li>FR20 - All the subscribed channels and liked podcasts should be visible on the user’s wall.</li>
-        </ul>
-        
-        <h4>Non-Functional Requirements(NFR)</h4>
-        <ul>
-            <li>NFR1- Platforms: Accessible as Mobile app(iOS/Android), Web app, Smartcar app for Tesla & KIA and has Alexa/ Google Home app integration for listeners.</li>
-            <li>NFR2- Application interface only in English language.</li>
-            <li>NFR3- The application should be available 99.9999%.</li>
-            <li>NFR4- All web pages should have low latency with loading time under 2 seconds.</li>
-            <li>NFR5- All web traffic should be encrypted using Transport Layer Security.</li>
-            <li>NFR6- Appropriate measures should be taken to ensure data servers are secured.</li>
-            <li>NFR7- Data backups should be created daily (minimum).</li>
-            <li>NFR8- A private API should be available for third-party, desktop, or mobile application integration.</li>
-            <li>NFR9- Access to all data should take a privileged approach.</li>
-            <li>NFR10- The application interface should meet or exceed level AA conformance of the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>.</li>
-        </ul>
+      <h3 class="w3-wide">Requirements</h3>
+      <p>
+        As we consider multiple use cases of this system, it is apparent the scope of the system can easily expand if
+        allowed.
+      </p>
+      <h4>Functional Requirements(FR)</h4>
+      <ul>
+        <li>FR1 - All users may login to the system using a unique username and password.</li>
+        <li>FR2 - All users may register or sign up themselves into the system except admin as we will have an admin
+          created in the system from backend.</li>
+        <li>FR3 - Audio Hosting - Podcasters should be able to create and host their own channels with unique names.
+        </li>
+        <li>FR4 - Publishing - Podcasters should be able to publish their own podcast Recorded episodes.</li>
+        <li>FR5 - CRUD Podcast - Podcasters should be able to Add, search and delete subscriptions and podcasts.</li>
+        <li>FR6 - Live Streaming - Podcasters should be able to do their Podcast live.</li>
+        <li>FR7 - Listener Engagement - Listeners can send or delete comments, instant messages, and can request to join
+          into live shows.</li>
+        <li>FR8 - Live chatting room - Users can build a chatting room under a specific topic subject to live chat with
+          other users.</li>
+        <li>FR9 - Subscribe/Unsubscribe to channels - Users are allowed to Follow/subscribe the channel or topic they
+          like.</li>
+        <li>FR10 - Users should be able to get notifications of the activities of channels being followed or by the
+          system admin.</li>
+        <li>FR11 - Podcasters can use the application on a computer with a microphone when recording or going live in
+          the podcast.</li>
+        <li>FR12 - Podcasters should be able to share/copy a link of an existing podcast and schedule a time for a
+          future live podcast.</li>
+        <li>FR13 - All the podcasts created by the podcaster in the particular channel should be visible on the wall of
+          the channel.</li>
+        <li>FR14 - Podcasters should hvae editing features to crop or modulate voice and add some audio enhancements in
+          the podcast.</li>
+        <li>FR15 - Podcasters can see the statistics of their subscribers and channel exposure.</li>
+        <li>FR16 - Admin should have a page where he/she can see the notifications, reports, search and do other
+          multiple functions.</li>
+        <li>FR17 - Admin should be able to edit and delete the items of the channel or the channel itself universally.
+        </li>
+        <li>FR18 - Admin should get a notification when there is a new issue reported and if there are updates of the
+          issues (edit, delete, change priority, comments etc).</li>
+        <li>FR19 - Searching function for podcasts, users, chat rooms, and channels by any user.</li>
+        <li>FR20 - All the subscribed channels and liked podcasts should be visible on the user’s wall.</li>
+      </ul>
+
+      <h4>Non-Functional Requirements(NFR)</h4>
+      <ul>
+        <li>NFR1- Platforms: Accessible as Mobile app(iOS/Android), Web app, Smartcar app for Tesla & KIA and has Alexa/
+          Google Home app integration for listeners.</li>
+        <li>NFR2- Application interface only in English language.</li>
+        <li>NFR3- The application should be available 99.9999%.</li>
+        <li>NFR4- All web pages should have low latency with loading time under 2 seconds.</li>
+        <li>NFR5- All web traffic should be encrypted using Transport Layer Security.</li>
+        <li>NFR6- Appropriate measures should be taken to ensure data servers are secured.</li>
+        <li>NFR7- Data backups should be created daily (minimum).</li>
+        <li>NFR8- A private API should be available for third-party, desktop, or mobile application integration.</li>
+        <li>NFR9- Access to all data should take a privileged approach.</li>
+        <li>NFR10- The application interface should meet or exceed level AA conformance of the <a
+            href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>.</li>
+      </ul>
     </div>
 
     <!-- The High Level Design Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="hightleveldesign">
-    <h2 class="w3-wide w3-center">High Level Design</h2>
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="hightleveldesign">
+      <h2 class="w3-wide w3-center">High Level Design</h2>
       <h3 id="SystemArchitecture">System Architecture</h3>
       <p>
-          Since this product has a scope to scale up and down both horizontally as well as vertically based on the number of listeners and podcasters, as well as, the number of features that can be added in the future, we feel microservices architecture will best suit the APIs being consumed by user interface consisting of multiple devices. The presentation tier is mainly for the user interface and communication layer of the application, where the end-user interacts with the application. In MOUSAI, our users could get access to the data on three different platforms including web, mobile, and smart device integration such as Alexa apps and smart car apps. <a href="#fig1.1">Figure 1.1</a> is the high-level architecture depicting that the users will be able to access the application through three interfaces:
-          <ul>
-            <li>Listener: Web, Mobile, Smart devices</li>
-            <li>Podcaster: Web </li>
-            <li>Admin: Web</li>
-            <br>
-          All the requests will go to the web server and the static content will be stored there and the dynamic content will be served by the API gateway. 
-            We are using web socket APIs as well as REST APIs. Web server and Application server of this tier are kinds of server which are employed to deliver sites and therefore the latter deals with application operations performed between users and back-end business applications of the organization. The audio files and all the data will be stored in heterogeneous data sources. The audio files and the chat messages will be stored in Cloud managed services such as Amazon S3. The user information will be stored in the RDBMS and the audio metadata will be stored in a NOSQL database.
-      </p>
-      <p>
+        Since this product has a scope to scale up and down both horizontally as well as vertically based on the number
+        of listeners and podcasters, as well as, the number of features that can be added in the future, we feel
+        microservices architecture will best suit the APIs being consumed by user interface consisting of multiple
+        devices. The presentation tier is mainly for the user interface and communication layer of the application,
+        where the end-user interacts with the application. In MOUSAI, our users could get access to the data on three
+        different platforms including web, mobile, and smart device integration such as Alexa apps and smart car apps.
+        <a href="#fig1.1">Figure 1.1</a> is the high-level architecture depicting that the users will be able to access
+        the application through three interfaces:
+      <ul>
+        <li>Listener: Web, Mobile, Smart devices</li>
+        <li>Podcaster: Web </li>
+        <li>Admin: Web</li>
+        <br>
+        All the requests will go to the web server and the static content will be stored there and the dynamic content
+        will be served by the API gateway.
+        We are using web socket APIs as well as REST APIs. Web server and Application server of this tier are kinds of
+        server which are employed to deliver sites and therefore the latter deals with application operations performed
+        between users and back-end business applications of the organization. The audio files and all the data will be
+        stored in heterogeneous data sources. The audio files and the chat messages will be stored in Cloud managed
+        services such as Amazon S3. The user information will be stored in the RDBMS and the audio metadata will be
+        stored in a NOSQL database.
+        </p>
+        <p>
           <b id="fig1.1">Fig. 1.1</b>
           <img src="images/HLD.png" alt="High level diagram" width="100%" height="100%">
-      </p>
-      <h4>Domain Design</h4>
-      <p>In <a href="#fig1.2">Figure 1.2</a> is the domain design of MOUSAI to be more clear of the modules involved in the product. We have defined the subdomain based on its inner problem space logic
-      and business requirements. The core domain is Podcast Social media platform and all others are the sub-domains
-      including listeners subdomain, podcasters subdomain, live chat subdomain, notification subdomain and
-      admin activities sub domain.</p>
-      <p id="fig1.2">
+        </p>
+        <h4>Domain Design</h4>
+        <p>In <a href="#fig1.2">Figure 1.2</a> is the domain design of MOUSAI to be more clear of the modules involved
+          in the product. We have defined the subdomain based on its inner problem space logic
+          and business requirements. The core domain is Podcast Social media platform and all others are the sub-domains
+          including listeners subdomain, podcasters subdomain, live chat subdomain, notification subdomain and
+          admin activities sub domain.</p>
+        <p id="fig1.2">
           <b>Fig. 1.2</b>
           <img src="images/Domaindriven.png" alt="Domain diagram" width="100%" height="100%">
-      </p>
-      
-      <h4>Data Flow Diagrams</h4>
-      <p>Below are some flow diagrams for more clarity on the usage of the system by each user role defined:</p>
-      <h5 id="fig1.3">Podcaster</h5>
-      <p>
-        <b>Fig. 1.3</b>
-        <img src="images/PodcasterDFD.png" alt="Podcasters Flow Chart" width="100%" height="100%">
-        As seen in the <a href="#fig1.3">Figure 1.3</a>, after login/signup, the podcaster will land on the home page where he/she will have multiple options to upload and publish a podcast, livestream, see the channel and podcast stats and edit or delete own podcasts, reply to the comments and report the comments/users which all is mentioned in the diagram.
-      </p>
-      
-      <h5 id="fig1.4">Listener</h5>
-      <p>
-        <b>Fig. 1.4</b>
-        <img src="images/ListenerDFD.png" alt="Listeners Flow Chart" width="100%" height="100%">
-        As seen in the <a href="#fig1.4">Figure 1.4</a>, after login/signup, the listener will land on the home page where he/she will have multiple options including searching for podcasts and channels, listening, subscribing, commenting, reporting, joining a live podcast, creating a chat room, etc.
-      </p>
-      
-      <h5 id="fig1.5">Admin</h5>
-      <p>
-        <b>Fig. 1.5</b>
-        <img src="images/AdminDFD.png" alt="Admin Flow Chart" width="100%" height="100%">
-        As seen in the <a href="#fig1.5">Figure 1.5</a>, after login, the admin will land on the home page where he/she will have multiple options including review the reports, see analytics, searching for podcasts and channels.
-      </p>
+        </p>
+
+        <h4>Data Flow Diagrams</h4>
+        <p>Below are some flow diagrams for more clarity on the usage of the system by each user role defined:</p>
+        <h5 id="fig1.3">Podcaster</h5>
+        <p>
+          <b>Fig. 1.3</b>
+          <img src="images/PodcasterDFD.png" alt="Podcasters Flow Chart" width="100%" height="100%">
+          As seen in the <a href="#fig1.3">Figure 1.3</a>, after login/signup, the podcaster will land on the home page
+          where he/she will have multiple options to upload and publish a podcast, livestream, see the channel and
+          podcast stats and edit or delete own podcasts, reply to the comments and report the comments/users which all
+          is mentioned in the diagram.
+        </p>
+
+        <h5 id="fig1.4">Listener</h5>
+        <p>
+          <b>Fig. 1.4</b>
+          <img src="images/ListenerDFD.png" alt="Listeners Flow Chart" width="100%" height="100%">
+          As seen in the <a href="#fig1.4">Figure 1.4</a>, after login/signup, the listener will land on the home page
+          where he/she will have multiple options including searching for podcasts and channels, listening, subscribing,
+          commenting, reporting, joining a live podcast, creating a chat room, etc.
+        </p>
+
+        <h5 id="fig1.5">Admin</h5>
+        <p>
+          <b>Fig. 1.5</b>
+          <img src="images/AdminDFD.png" alt="Admin Flow Chart" width="100%" height="100%">
+          As seen in the <a href="#fig1.5">Figure 1.5</a>, after login, the admin will land on the home page where
+          he/she will have multiple options including review the reports, see analytics, searching for podcasts and
+          channels.
+        </p>
 
 
-      <h3 style="padding-top: 64px" id="FileStorageDesign">File Storage Design</h3>
-      <p>
+        <h3 style="padding-top: 64px" id="FileStorageDesign">File Storage Design</h3>
+        <p>
           Podcast streaming platforms may have a variety of data formats,
           including text, image, and audio types, among others.
           Extracting and structuring the information contained in these data is not always useful or efficient.
           This is where the document storage component comes in.
           The purpose of the document storage component is to securely
           and persistently store any files that the user uploads to the system.
-      </p>
-      <p>
+        </p>
+        <p>
           Amazon S3 is an ideal choice for file storage components.
           Amazon S3 offers industry-leading scalability, data availability, security, and performance.
           It is also affordable, well-supported, mature and easy to configure.
-          Every file uploaded to the system can be dumped to an S3 bucket and associated with an entity in the database component.
+          Every file uploaded to the system can be dumped to an S3 bucket and associated with an entity in the database
+          component.
           We can also use S3 to store backups of all data.
           Data backups can be automated using tools provided by AWS and stored privately in a separate S3 bucket.
-      </p>
-      <div class="w3-center">
+        </p>
+        <div class="w3-center">
           <img src="images/filestorage.png" alt="">
           <br>Fig. 2.1
-      </div>
+        </div>
 
-      <h3 style="padding-top: 64px" id="DatabaseDesign">Database Design</h3>
-      <p>Databases are a core component of many software systems.
+        <h3 style="padding-top: 64px" id="DatabaseDesign">Database Design</h3>
+        <p>Databases are a core component of many software systems.
           There are two popular database types: RDBMS and NoSQL, each with their own advantages and challenges.
           RDBMS is ideal for structured data while NoSQL databases can easily handle any data format,
           such as structured, semi-structured, and unstructured data in a single data store.
           Using NoSQL, we can easily identify all the metadata the system needs to capture.</p>
 
-      <p>Since MOUSAI is a streaming platform that needs to support variation in metadata with new features and requirements.
+        <p>Since MOUSAI is a streaming platform that needs to support variation in metadata with new features and
+          requirements.
           To maintain this complex and large-scale system, it is better to use NoSQL to handle our metadata database.
-          NoSQL models provide several features that we will make heavy use of. There are no relational constraints on the data, and it does not need to be even tabular.
+          NoSQL models provide several features that we will make heavy use of. There are no relational constraints on
+          the data, and it does not need to be even tabular.
           NoSQL offers performance at a higher scale by typically giving up strong consistency.
           But for user-related data including user personal information and role information, RDBMS is a good choice.
           SQL databases are a better fit for heavy duty or complex transactions because
           it’s more stable and ensure data integrity.</p>
-      <p>Also, we are using AWS Cloud service, Simple Notification Service, SNS which is a fully managed graph database.</p>
+        <p>Also, we are using AWS Cloud service, Simple Notification Service, SNS which is a fully managed graph
+          database.</p>
 
-      <p>Below is the database design.</p>
+        <p>Below is the database design.</p>
 
-      <p>
+        <p>
           <img src="images/databaseDesign.png" alt="" width="100%" height="100%">
-      </p>
-      
-      <h3 style="padding-top: 64px" id="APIDesign">API Design</h3>
-      <p>For the services, we have chosen to go with microservices architecture as we can see a lot of use cases to use microservices. This application is all based on the number of users, listeners to podcasters ratio, and trend on which service there is the most load, and we should be able to scale up and down the services based on that. Also adding new services would be so much easier by using the microservices architecture. </p>
-      <p>For other services, maintaining separation of concerns, there will be no downtime for other services.</p>
-      <p>
+        </p>
+
+        <h3 style="padding-top: 64px" id="APIDesign">API Design</h3>
+        <p>For the services, we have chosen to go with microservices architecture as we can see a lot of use cases to
+          use microservices. This application is all based on the number of users, listeners to podcasters ratio, and
+          trend on which service there is the most load, and we should be able to scale up and down the services based
+          on that. Also adding new services would be so much easier by using the microservices architecture. </p>
+        <p>For other services, maintaining separation of concerns, there will be no downtime for other services.</p>
+        <p>
           <b>Figure 4.1</b>
           <img src="images/API.png" alt="API diagram" width="100%" height="100%">
-      </p>
-    <p>In the <a href="#APIDesign">Figure 4.1</a> we can see some more detailed view of the <a href="#fig1.1">high level design</a>. Here, we can see:
-      <ul>
-        <li><b>Identity Provider</b>: This service will be helpful in all the functional requirements as this is a closed system and need authentication and authorisation to access the resources. Also, NFR1, NFR3 and NFR9 are covered with this service in the architecture.</li>
-        <li><b>API Gateway</b>: All the API calls will go to the microservices through the API gateway.</li>
-        <li><b>Content Delivery Network</b>: We will use a cloud manged CDN service like AWS Cloud Front for the faster content delivery to the end user reducing the latency and improving the performance of the system.</li>
-        <li><b>Microservices</b></li>
-        <li><b>AWS S3 File Storage</b></li>
-        <li><b>AWS Dynamo Databases (NoSql)</b></li>
-        <li><b>Message Broker</b></li>
-      </ul>
-    </p>
-      
-      <h3 style="padding-top: 64px" id="WebApplicationDesign">User Interface Design</h3>
-      <p>Usability of the application plays a very important role in assessing the quality of the application.
-      As there are multiple interfaces of the application for different roles of user as mentioned earlier. We need a design architecture for which the framework creates all the variants for easing the maintenance of the application.</p>
-      <h4>Web and Mobile Application Design</h4>
-    
-      <p>Single page application will be a good fit for the application as it can be used and can load elements asynchronously depending on user actions, the page does not need to be reloaded when navigating between different pages, which will ensure an uninterrupted user experience and function like a standard desktop application. 
-        This will reduce server load at any given point and shorten page loads, which also aids in improving the user experience and fulfill NFR4. 
-      </p>
-       <h5>Model View Controller Architectural pattern</h5>
-      <p>By using event listener functions that modify the application's state and re-render that state to the page we can build an interactive application. Most of the JavaScript application frameworks are based on some variation of the MVC pattern.</p>
-      <b>Fig. 5.1 MVC design</b>
-      <img src="images/MVC.png" alt="MVC pattern" width="100%" height="100%">
-      <h4>Smart Device Audio Application Design</h4>
-      <p>Creating apps for multiple smart devices which responds to your voice, will have different pieces of hardware but the fundamentals of all applications will be common and in the backend the applications will interact with the microservices/APIs to get the data, buffer and stream audio. Also, it will require to have a web/mobile interface for the setup. </p>
-      
-      
-      <h3 style="padding-top: 64px" id="RequirementTraceabilityMatrix">Requirement Traceability Matrix(RTM)</h3>
-      <p>
-          Here is the Requirement Traceability Matrix providing a quick reference for the relationship between the requirements and the system components.
-          Functional requirements define what a product must do, what its features and functions are. Nonfunctional requirements describe the general properties of a system.
-          An RTM ensures that projects do everything they set out to do. This step-by-step process helps identify the requirements and the products that are required to be tested successfully.
+        </p>
+        <p>In the <a href="#APIDesign">Figure 4.1</a> we can see some more detailed view of the <a href="#fig1.1">high
+            level design</a>. Here, we can see:
+        <ul>
+          <li><b>Identity Provider</b>: This service will be helpful in all the functional requirements as this is a
+            closed system and need authentication and authorisation to access the resources. Also, NFR1, NFR3 and NFR9
+            are covered with this service in the architecture.</li>
+          <li><b>API Gateway</b>: All the API calls will go to the microservices through the API gateway.</li>
+          <li><b>Content Delivery Network</b>: We will use a cloud manged CDN service like AWS Cloud Front for the
+            faster content delivery to the end user reducing the latency and improving the performance of the system.
+          </li>
+          <li><b>Microservices</b></li>
+          <li><b>AWS S3 File Storage</b></li>
+          <li><b>AWS Dynamo Databases (NoSql)</b></li>
+          <li><b>Message Broker</b></li>
+        </ul>
+        </p>
+
+        <h3 style="padding-top: 64px" id="WebApplicationDesign">User Interface Design</h3>
+        <p>Usability of the application plays a very important role in assessing the quality of the application.
+          As there are multiple interfaces of the application for different roles of user as mentioned earlier. We need
+          a design architecture for which the framework creates all the variants for easing the maintenance of the
+          application.</p>
+        <h4>Web and Mobile Application Design</h4>
+
+        <p>Single page application will be a good fit for the application as it can be used and can load elements
+          asynchronously depending on user actions, the page does not need to be reloaded when navigating between
+          different pages, which will ensure an uninterrupted user experience and function like a standard desktop
+          application.
+          This will reduce server load at any given point and shorten page loads, which also aids in improving the user
+          experience and fulfill NFR4.
+        </p>
+        <h5>Model View Controller Architectural pattern</h5>
+        <p>By using event listener functions that modify the application's state and re-render that state to the page we
+          can build an interactive application. Most of the JavaScript application frameworks are based on some
+          variation of the MVC pattern.</p>
+        <b>Fig. 5.1 MVC design</b>
+        <img src="images/MVC.png" alt="MVC pattern" width="100%" height="100%">
+        <h4>Smart Device Audio Application Design</h4>
+        <p>Creating apps for multiple smart devices which responds to your voice, will have different pieces of hardware
+          but the fundamentals of all applications will be common and in the backend the applications will interact with
+          the microservices/APIs to get the data, buffer and stream audio. Also, it will require to have a web/mobile
+          interface for the setup. </p>
+
+
+        <h3 style="padding-top: 64px" id="RequirementTraceabilityMatrix">Requirement Traceability Matrix(RTM)</h3>
+        <p>
+          Here is the Requirement Traceability Matrix providing a quick reference for the relationship between the
+          requirements and the system components.
+          Functional requirements define what a product must do, what its features and functions are. Nonfunctional
+          requirements describe the general properties of a system.
+          An RTM ensures that projects do everything they set out to do. This step-by-step process helps identify the
+          requirements and the products that are required to be tested successfully.
           It also helps in determining the project's direction and timeline.
-      </p>
-      <h4>Functional Requirements(FR):</h4>
-      <table class="w3-table w3-bordered">
+        </p>
+        <h4>Functional Requirements(FR):</h4>
+        <table class="w3-table w3-bordered">
           <tr>
-              <td>Requirement number</td>
-              <td>Microservices Architecture</td>
-              <td>Database Component</td>
-              <td>File Storage (S3)</td>
-              <td>Web App Component</td>
-              <td>Rest API</td>
-              <td>WebSocket API</td>
-              <td>Message Broker</td>
-              <td>Identity Provider</td>
-              <td>CDN</td>
-              <td>Pubsub Service (Amazon SNS)</td>
-              <td>Analytics Service</td>
+            <td>Requirement number</td>
+            <td>Microservices Architecture</td>
+            <td>Database Component</td>
+            <td>File Storage (S3)</td>
+            <td>Web App Component</td>
+            <td>Rest API</td>
+            <td>WebSocket API</td>
+            <td>Message Broker</td>
+            <td>Identity Provider</td>
+            <td>CDN</td>
+            <td>Pubsub Service (Amazon SNS)</td>
+            <td>Analytics Service</td>
           </tr>
           <tr>
-              <td>FR1</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR1</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR2</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR2</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR3</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR3</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR4</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR4</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR5</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR5</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR6</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR6</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR7</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR7</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR8</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR8</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR9</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR9</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR10</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
+            <td>FR10</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR11</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR11</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR12</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR12</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR13</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR13</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR14</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR14</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR15</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
+            <td>FR15</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
           </tr>
           <tr>
-              <td>FR16</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
+            <td>FR16</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR17</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>FR17</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR18</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
+            <td>FR18</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR19</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>FR19</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>FR20</td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
+            <td>FR20</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
           </tr>
-      </table>
-      </br>
-      <h4>Non-Functional Requirements(NFR)</h4>
-      <table class="w3-table w3-bordered">
+        </table>
+        </br>
+        <h4>Non-Functional Requirements(NFR)</h4>
+        <table class="w3-table w3-bordered">
           <tr>
-              <td>Requirement number</td>
-              <td>Microservices Architecture</td>
-              <td>Database Component</td>
-              <td>File Storage (S3)</td>
-              <td>Web App Component</td>
-              <td>Rest API</td>
-              <td>WebSocket API</td>
-              <td>Message Broker</td>
-              <td>Identity Provider</td>
-              <td>CDN</td>
-              <td>Pubsub Service (Amazon SNS)</td>
-              <td>Analytics Service</td>
-          </tr>
-          <tr>
-              <td>NFR1</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>Requirement number</td>
+            <td>Microservices Architecture</td>
+            <td>Database Component</td>
+            <td>File Storage (S3)</td>
+            <td>Web App Component</td>
+            <td>Rest API</td>
+            <td>WebSocket API</td>
+            <td>Message Broker</td>
+            <td>Identity Provider</td>
+            <td>CDN</td>
+            <td>Pubsub Service (Amazon SNS)</td>
+            <td>Analytics Service</td>
           </tr>
           <tr>
-              <td>NFR2</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR1</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR3</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR4</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
+            <td>NFR3</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR5</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR4</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR6</td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR7</td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR6</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR8</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR7</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR9</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>X</td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <td>NFR8</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-              <td>NFR10</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>X</td>
+            <td>NFR9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
-      </table>
+          <tr>
+            <td>NFR10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+          </tr>
+        </table>
 
     </div>
-    
-      <!-- The Design Rationale Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="designRationale">
-    <h2 class="w3-wide w3-center">Design Rationale</h2>
+
+    <!-- The Design Rationale Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="designRationale">
+      <h2 class="w3-wide w3-center">Design Rationale</h2>
       <h3>System Architecture Rationale</h3>
       <p>In this application, we have several modules to serve each requirement. They are:</p>
       <ul>
@@ -829,8 +927,10 @@ body {font-family: "Lato", sans-serif}
       </p>
 
       <h4>AWS Cloud Front:</h4>
-      <p>AWS Cloud Front works as the content delivery network(CDN) in our application because we can have a large number of
-        users across the world and should have low latency for the response. CDN refers to a geographically distributed group
+      <p>AWS Cloud Front works as the content delivery network(CDN) in our application because we can have a large
+        number of
+        users across the world and should have low latency for the response. CDN refers to a geographically distributed
+        group
         of servers that work together to provide fast delivery of data. It allows for the quick transfer of assets
         needed for loading application content including HTML pages, javascript files, stylesheets, images, and videos.
         It can also help our application protect from common attacks such as DDOS attacks.
@@ -863,42 +963,58 @@ body {font-family: "Lato", sans-serif}
         other services as sending a notification to a user when the admin makes changes to their issue report, sending
         notification to the user regarding the user interactions in their podcast.
       </p>
-      
+
       <h3 style="padding-top: 64px" id="DataTierRationale">Data Tier Rationale</h3>
       <h4>Amazon S3</h4>
       <p>
-          Using S3 as our file storage gives us everything we want with minimal investment.
-          S3 provides all the tools necessary to properly configure file storage. S3 provides high availability of the podcasts audio to the
-          listeners, and we can store any amount of audio duration in the S3. And S3 will take care of the data backup.
+        Using S3 as our file storage gives us everything we want with minimal investment.
+        S3 provides all the tools necessary to properly configure file storage. S3 provides high availability of the
+        podcasts audio to the
+        listeners, and we can store any amount of audio duration in the S3. And S3 will take care of the data backup.
       </p>
       <p>Benefits of S3:</p>
       <li><b>Reliable Security</b></li>
-      <p>Amazon S3 buckets can only be used by the identity that created them. We can set access permissions per file, per bucket, or through IAM (Identity Access Management), which provides complete control over how, where and who can frequently access data. Using these rules and permission sets, we can ensure that there is no unauthorized access to our data.</p>
+      <p>Amazon S3 buckets can only be used by the identity that created them. We can set access permissions per file,
+        per bucket, or through IAM (Identity Access Management), which provides complete control over how, where and who
+        can frequently access data. Using these rules and permission sets, we can ensure that there is no unauthorized
+        access to our data.</p>
       <li><b>Availability</b></li>
-      <p>Amazon S3 gives every user, its service access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of websites. </p>
+      <p>Amazon S3 gives every user, its service access to the same highly scalable, reliable, fast, inexpensive data
+        storage infrastructure that Amazon uses to run its own global network of websites. </p>
       <li><b>Simplicity of Management</b></li>
-      <p>Amazon S3 has a very user-friendly web interface which takes out the usual hard work of maintaining security, optimizing storage classes and managing the data transfer in the most suitable way.</p>
+      <p>Amazon S3 has a very user-friendly web interface which takes out the usual hard work of maintaining security,
+        optimizing storage classes and managing the data transfer in the most suitable way.</p>
       <li><b>Flexibility</b></li>
-      <p>S3 is ideal for a wide range of uses like data storage, data backup, software delivery, data archiving, disaster recovery, website hosting, mobile applications, and much more.</p>
+      <p>S3 is ideal for a wide range of uses like data storage, data backup, software delivery, data archiving,
+        disaster recovery, website hosting, mobile applications, and much more.</p>
 
       <h4>RDBMS</h4>
-      <p>A Relational Database consists of appropriately arranged tables from which data can be administered and operated in various different ways without having to rearrange the entire set of database tables.
-          SQL queries are applied for both interactive queries to fetch information and gathering data for reporting and analysis purposes.
-          This helps in making user-related operations and processes convenient, and maintaining the integrity of data.</p>
+      <p>A Relational Database consists of appropriately arranged tables from which data can be administered and
+        operated in various different ways without having to rearrange the entire set of database tables.
+        SQL queries are applied for both interactive queries to fetch information and gathering data for reporting and
+        analysis purposes.
+        This helps in making user-related operations and processes convenient, and maintaining the integrity of data.
+      </p>
       <p>Benefits of RDBMS:</p>
       <li><b>Accuracy</b></li>
-      <p>In the relational database system, there can be multiple tables related to one another with the use of a primary key and foreign key concepts.
-          This makes the data to be non-repetitive. There is no chance for duplication of data.
-          Hence, the accuracy of data in the relational database is more than any other database system.</p>
+      <p>In the relational database system, there can be multiple tables related to one another with the use of a
+        primary key and foreign key concepts.
+        This makes the data to be non-repetitive. There is no chance for duplication of data.
+        Hence, the accuracy of data in the relational database is more than any other database system.</p>
       <li><b>Data Integrity</b></li>
       <p>Data integrity is a crucial characteristic of the Relational Database system.
-          Sturdy Data entries and legitimacy validations ensure that all the Data in the database confines within suitable arrangements and the data necessary for creating the relationships are present.
-          This relational reliability amongst the tables in the database helps in avoiding the records from being imperfect, isolated or unrelated.
-          Data integrity aids in making sure of the relational database’s other significant characteristics like Ease of use, precision, and stability of the data.
+        Sturdy Data entries and legitimacy validations ensure that all the Data in the database confines within suitable
+        arrangements and the data necessary for creating the relationships are present.
+        This relational reliability amongst the tables in the database helps in avoiding the records from being
+        imperfect, isolated or unrelated.
+        Data integrity aids in making sure of the relational database’s other significant characteristics like Ease of
+        use, precision, and stability of the data.
       </p>
       <li><b>Normalization</b></li>
-      <p>The methodical style is maintained for making sure of a relational database structure is liberated of any variances that can make a difference in the integrity and accuracy of the tables in the database.
-          A normalization process provides a set of regulations, characteristics, and purposes for the database structure and evaluation of a relational database model.
+      <p>The methodical style is maintained for making sure of a relational database structure is liberated of any
+        variances that can make a difference in the integrity and accuracy of the tables in the database.
+        A normalization process provides a set of regulations, characteristics, and purposes for the database structure
+        and evaluation of a relational database model.
       </p>
 
 
@@ -906,87 +1022,119 @@ body {font-family: "Lato", sans-serif}
 
 
       <h4>NoSQL</h4>
-      <p>NoSQL databases are designed for fast, simple queries, vast data, and frequent application changes which perfectly fits for the requirement of
-          saving audio metadata, comments and default thumbnails.
-          In addition, these databases also make programming much simpler for developers.</p>
+      <p>NoSQL databases are designed for fast, simple queries, vast data, and frequent application changes which
+        perfectly fits for the requirement of
+        saving audio metadata, comments and default thumbnails.
+        In addition, these databases also make programming much simpler for developers.</p>
       <p>Benefits of NoSQL:</p>
       <li><b>Flexibility</b></li>
-      <p>NoSQL databases offer flexible schemas and also support a variety of data formats that are ideal for building MOUSAI that require large data volumes and low latency or response times.</p>
+      <p>NoSQL databases offer flexible schemas and also support a variety of data formats that are ideal for building
+        MOUSAI that require large data volumes and low latency or response times.</p>
       <li><b>Scalability</b></li>
-      <p>NoSQL databases scale out horizontally, which means that they can handle extremely large amounts of data—even as the data is growing —in a more efficient way. With MOUSAI’s continue growing users and number of audios, it is reasonable using NoSQL. The scale-out architecture of a NoSQL database can be particularly valuable when data volume or traffic increases.</p>
+      <p>NoSQL databases scale out horizontally, which means that they can handle extremely large amounts of data—even
+        as the data is growing —in a more efficient way. With MOUSAI’s continue growing users and number of audios, it
+        is reasonable using NoSQL. The scale-out architecture of a NoSQL database can be particularly valuable when data
+        volume or traffic increases.</p>
       <li><b>Availability</b></li>
-      <p>NoSQL databases automatically replicate data across multiple servers, data centers, or cloud resources. In turn, this minimizes latency for users, no matter where they’re located.</p>
+      <p>NoSQL databases automatically replicate data across multiple servers, data centers, or cloud resources. In
+        turn, this minimizes latency for users, no matter where they’re located.</p>
 
 
       <h3 style="padding-top: 64px" id="APIDesignRationale">API Design Rationale</h3>
-      <p>We use two different APIs for this product. APIs are necessary to decouple the clients and backend servers in the application. They are also needed to bring applications together in order to perform a designed function built around sharing data and executing pre-defined processes. They work as the middleman, allowing developers to build new programmatic interactions between the various applications people and businesses use on a daily basis.</p>
+      <p>We use two different APIs for this product. APIs are necessary to decouple the clients and backend servers in
+        the application. They are also needed to bring applications together in order to perform a designed function
+        built around sharing data and executing pre-defined processes. They work as the middleman, allowing developers
+        to build new programmatic interactions between the various applications people and businesses use on a daily
+        basis.</p>
       <h4>Rest API:</h4>
-      <p>Rest APIs are useful when the clients need to communicate with the backend servers for the data. These are stateless, meaning every connection to the server is a new one. They are helpful when you need only a single machine to trigger the request. In our application, we can use these APIs for all client requests except the streaming services.</p>
+      <p>Rest APIs are useful when the clients need to communicate with the backend servers for the data. These are
+        stateless, meaning every connection to the server is a new one. They are helpful when you need only a single
+        machine to trigger the request. In our application, we can use these APIs for all client requests except the
+        streaming services.</p>
       <h4>WebSocket API:</h4>
-      <p>These APIs are written over TCP connections. For streaming, we will need a connection that is reliable and sequential as we need to send the packets or bits of the data or audio (in our case) sequentially. We can use Ajax long polling for the streaming services. But they are not efficient in our case as we are expecting at least 1000 users per second requesting to listen to audio.</p>
-      
-      <h3 style="padding-top: 64px" id="WebApplicationDesignRationale">Web Application Design Rationale</h3>
-      <p> TODO</p>
-      
+      <p>These APIs are written over TCP connections. For streaming, we will need a connection that is reliable and
+        sequential as we need to send the packets or bits of the data or audio (in our case) sequentially. We can use
+        Ajax long polling for the streaming services. But they are not efficient in our case as we are expecting at
+        least 1000 users per second requesting to listen to audio.</p>
+
+      <h3 style="padding-top: 64px" id="WebApplicationDesignRationale">Web and Mobile Application Design Rationale</h3>
+      <p> For this application, we are a single page application because it can be used both on any screen. We want our
+        application to be screen-atheist. React.js applications are especially both single page applications and
+        screen-atheist. It means they work better on any screen the application is opened on.</p>
+      <p>
+        The MVC architecture helps the application to decouple the data manipulation activities and user interactions.
+        It is easy to code, maintain and test as they support test driven development. They can also be easily modified.
+        This architecture helps us separate data and business logic that is easy to maintain and organize. We want to
+        keep our frontend as light as possible because we have time consuming processes happening in the backend.
+      </p>
+      <p>The APIs are built in way that they support all the devices equally. The smart devices, mobile application and
+        web application frontend might vary but our APIs are same for all the devices. This allows the application
+        support all the devices and easy maintainability.</p>
+
     </div>
-  
-  <!-- The Final thoughts Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="finalthoughts">
-    <h2 class="w3-wide w3-center">Final Thoughts</h2>
-    <div class="w3-row w3-padding-32">
-      <div class="m6 w3-large w3-margin-bottom">
+
+    <!-- The Final thoughts Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="finalthoughts">
+      <h2 class="w3-wide w3-center">Final Thoughts</h2>
+      <div class="w3-row w3-padding-32">
+        <div class="m6 w3-large w3-margin-bottom">
           <p>
-              This paper contains enough design for us to start working on the MOUSAI podcast system. The majority of our choices have been supported by tested methods for creating web applications. It is hard to foresee every potential issue or design defect. The division of responsibilities will make it simpler to make design adjustments if any unforeseen problems should occur. Please keep in mind that all design decisions involve compromises if any adjustments are necessary.
+            This paper contains enough design for us to start working on the MOUSAI podcast system. The majority of our
+            choices have been supported by tested methods for creating web applications. It is hard to foresee every
+            potential issue or design defect. The division of responsibilities will make it simpler to make design
+            adjustments if any unforeseen problems should occur. Please keep in mind that all design decisions involve
+            compromises if any adjustments are necessary.
           </p>
+        </div>
+
       </div>
-      
     </div>
+
+    <!-- End Page Content -->
   </div>
-  
-<!-- End Page Content -->
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-copyright"></i> Copyright
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <i class="fa fa-copyright"></i> Copyright
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
 
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
+  <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 4000);
+    }
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
 
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
+
 </html>
